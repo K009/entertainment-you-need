@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": ".js"
+      }
+    ] //1 wlaczana regula 0 wylaczana regula true/false
+}
