@@ -35,9 +35,7 @@ const UserPageTemplate = ({ children, pageType }) => (
     <StyledWrapper>
       <StyledPageHeader>
         <Input search placeholder="Search" />
-        <StyledHeading big as="h1">
-          Notes
-        </StyledHeading>
+        <StyledHeading big>Notes</StyledHeading>
         <StyledParagraph>2 notes</StyledParagraph>
       </StyledPageHeader>
       <StyledGrid>{children}</StyledGrid>

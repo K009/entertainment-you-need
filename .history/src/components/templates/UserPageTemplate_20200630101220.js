@@ -34,10 +34,7 @@ const UserPageTemplate = ({ children, pageType }) => (
     <Sidebar pageType={pageType} />
     <StyledWrapper>
       <StyledPageHeader>
-        <Input search placeholder="Search" />
-        <StyledHeading big as="h1">
-          Notes
-        </StyledHeading>
+        <Input search placeholder="Search" /> <StyledHeading>Notes</StyledHeading>{' '}
         <StyledParagraph>2 notes</StyledParagraph>
       </StyledPageHeader>
       <StyledGrid>{children}</StyledGrid>

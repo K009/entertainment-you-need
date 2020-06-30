@@ -21,7 +21,7 @@ const StyledPageHeader = styled.div`
 `;
 
 const StyledHeading = styled(Heading)`
-  margin: 25px 0 0 0;
+  margin: 0;
 `;
 
 const StyledParagraph = styled(Paragraph)`
@@ -34,10 +34,7 @@ const UserPageTemplate = ({ children, pageType }) => (
     <Sidebar pageType={pageType} />
     <StyledWrapper>
       <StyledPageHeader>
-        <Input search placeholder="Search" />
-        <StyledHeading big as="h1">
-          Notes
-        </StyledHeading>
+        <Input search placeholder="Search" /> <StyledHeading>Notes</StyledHeading>{' '}
         <StyledParagraph>2 notes</StyledParagraph>
       </StyledPageHeader>
       <StyledGrid>{children}</StyledGrid>
