@@ -6,7 +6,6 @@ import bulbIcon from 'assets/icons/bulb.svg';
 import logoutIcon from 'assets/icons/logout.svg';
 import penIcon from 'assets/icons/pen.svg';
 import twitterIcon from 'assets/icons/twitter.svg';
-import logoIcon from 'assets/icons/logo.svg';
 
 const StyledWrapper = styled.nav`
   position: fixed;
@@ -44,12 +43,12 @@ const StyledLinksList = styled.ul`
   list-style: none;
 `;
 
-const Sidebar = ({ pageType }) => (
-  <StyledWrapper activeColor={pageType}>
+const Sidebar = () => (
+  <StyledWrapper>
     <StyledLogoLink to="/" />
     <StyledLinksList>
       <li>
-        <ButtonIcon exact as={NavLink} to="/" icon={penIcon} activeClass="active" />
+        <ButtonIcon as={NavLink} to="/" icon={penIcon} activeClass="active" />
       </li>
       <li>
         <ButtonIcon as={NavLink} to="/twitters" icon={twitterIcon} activeClass="active" />
