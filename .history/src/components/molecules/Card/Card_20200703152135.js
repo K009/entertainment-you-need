@@ -8,7 +8,6 @@ import Button from '../../atoms/Button/Button';
 import LinkIcon from 'assets/icons/link.svg';
 import { connect } from 'react-redux';
 import { removeItem as removeItemAction } from '../../../actions/index';
-import withContext from '../../../hoc/withContext';
 
 const StyledWrapper = styled.div`
   min-height: 380px;
@@ -81,34 +80,26 @@ class Card extends Component {
   handleCardClick = () => this.setState({ redirect: true });
 
   render() {
-    const {
-      id,
-      cardType: pageContext,
-      title,
-      created,
-      articleUrl,
-      content,
-      removeItem,
-    } = this.props;
+    const { id, cardType, title, created, articleUrl, content, removeItem } = this.props;
     const { redirect } = this.state;
 
     if (redirect) {
-      return <Redirect to={`${pageContext}/${id}`} />;
+      return <Redirect to={`${cardType}/${id}`} />;
     }
 
     return (
       <StyledWrapper onClick={this.handleCardClick}>
-        <InnerWrapper activeColor={pageContext}>
+        <InnerWrapper activeColor={cardType}>
           <StyledHeading>{title}</StyledHeading>
           <DateInfo>{created}</DateInfo>
-          {pageContext === 'twitters' && (
+          {cardType === 'twitters' && (
             <StyledAvatar src="https://cdn1.toys4boys.pl/28222-large_default/skladany-robot-tobbie.jpg" />
           )}
-          {pageContext === 'articles' && <StyledLinkButton href={articleUrl} />}
+          {cardType === 'articles' && <StyledLinkButton href={articleUrl} />}
         </InnerWrapper>
         <InnerWrapper flex>
           <Paragraph>{content}</Paragraph>
-          <Button onClick={() => removeItem(pageContext, id)} secondary>
+          <Button onClick={() => removeItem(cardType, id)} secondary>
             REMOVE
           </Button>
         </InnerWrapper>
@@ -118,7 +109,7 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  pageContext: PropTypes.oneOf(['notes', 'twitters', 'articles']),
+  cardType: PropTypes.oneOf(['notes', 'twitters', 'articles']),
   title: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
   twitterName: PropTypes.string,
@@ -128,7 +119,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  pageContext: 'note',
+  cardType: 'note',
   twitterName: null,
   articleUrl: null,
 };

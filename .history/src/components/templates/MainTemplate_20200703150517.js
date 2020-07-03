@@ -12,12 +12,10 @@ class MainTemplate extends React.Component {
   };
 
   componentDidMount() {
-    //przy odpaleniu strony
     this.setCurrentPage();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    //aktualizuje bez przeladowania strony
     this.setCurrentPage(prevState);
   }
 

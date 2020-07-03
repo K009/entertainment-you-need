@@ -55,7 +55,7 @@ GridTemplate.propTypes = {
 };
 
 GridTemplate.defaultProps = {
-  pageContext: 'note',
+  pageType: 'note',
 };
 
 export default withContext(GridTemplate);

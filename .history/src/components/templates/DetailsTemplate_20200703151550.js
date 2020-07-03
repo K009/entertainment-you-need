@@ -6,7 +6,7 @@ import UserPageTemplate from './UserPageTemplate';
 import Heading from 'components/atoms/Heading/Heading';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Button from 'components/atoms/Button/Button';
-import withContext from '../../hoc/withContext';
+import pageContext from '../../hoc/withContext';
 
 const StyledWrapper = styled.div`
   padding: 25px 150px 25px 70px;

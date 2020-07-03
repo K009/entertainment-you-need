@@ -68,7 +68,7 @@ Sidebar.propTypes = {
   pageContext: PropTypes.oneOf(['notes', 'twitters', 'articles']),
 };
 
-Sidebar.defaultProps = {
+Sidebard.defaultProps = {
   pageContext: 'notes',
 };
 

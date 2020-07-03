@@ -12,12 +12,10 @@ class MainTemplate extends React.Component {
   };
 
   componentDidMount() {
-    //przy odpaleniu strony
     this.setCurrentPage();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    //aktualizuje bez przeladowania strony
     this.setCurrentPage(prevState);
   }
 
@@ -33,6 +31,7 @@ class MainTemplate extends React.Component {
     if (prevState.pageType !== currentPage) {
       //jesli poprzedni i obecny typ strony jest taki sam to nic nie robi, jak sie roznia to zmienia state
       this.setState({ pageType: currentPage });
+      console.log(this.state);
     }
   };
 
