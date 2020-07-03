@@ -115,7 +115,6 @@ Card.propTypes = {
   twitterName: PropTypes.string,
   articleUrl: PropTypes.string,
   content: PropTypes.string.isRequired,
-  removeItem: PropTypes.func.isRequired,
 };
 
 Card.defaultProps = {
@@ -125,7 +124,7 @@ Card.defaultProps = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  removeItem: (itemType, id) => dispatch(removeItemAction(itemType, id)),
+  removeItem: (itemType, id) => dispatch(removeItem(itemType, id)),
 });
 
 export default connect(null, mapDispatchToProps)(Card);

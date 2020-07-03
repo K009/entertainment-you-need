@@ -3,25 +3,26 @@ import { connect } from 'react-redux';
 import GridTemplate from '../components/templates/GridTemplate';
 import Card from '../components/molecules/Card/Card';
 
-const Articles = ({ articles }) => (
-  <GridTemplate pageType="articles">
-    {articles.map((item) => (
+const Twitters = ({ twitters }) => (
+  <GridTemplate pageType="twitters">
+    {' '}
+    {twitters.map((item) => (
       <Card
-        cardType="articles"
+        cardType="twitters"
+        id={item.id}
         title={item.title}
         content={item.content}
-        articleUrl={item.articleUrl}
         created={item.created}
-        id={item.id}
+        twitterName={item.twitterName}
         key={item.id}
       />
-    ))}
+    ))}{' '}
   </GridTemplate>
 );
 
 const mapStateToProps = (state) => {
-  const { articles } = state;
-  return { articles: articles };
+  const { twitters } = state;
+  return { twitters: twitters };
 };
 
-export default connect(mapStateToProps)(Articles);
+export default connect(mapStateToProps)(Twitters);

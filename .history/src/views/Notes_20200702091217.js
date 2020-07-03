@@ -1,9 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Card from '../components/molecules/Card/Card';
 import GridTemplate from '../components/templates/GridTemplate';
 
-const Notes = ({ notes }) => (
+const Notes = () => (
   <GridTemplate pageType="notes">
     {notes.map((item) => (
       <Card
@@ -18,9 +17,4 @@ const Notes = ({ notes }) => (
   </GridTemplate>
 );
 
-const mapStateToProps = (state) => {
-  const { notes } = state;
-  return { notes: notes };
-};
-
-export default connect(mapStateToProps)(Notes);
+export default Notes;

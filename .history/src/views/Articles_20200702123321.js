@@ -13,7 +13,6 @@ const Articles = ({ articles }) => (
         articleUrl={item.articleUrl}
         created={item.created}
         id={item.id}
-        key={item.id}
       />
     ))}
   </GridTemplate>

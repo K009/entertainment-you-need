@@ -10,7 +10,7 @@ import DetailsPage from './DetailsPage';
 import { routes } from '../routes/index';
 
 const Root = () => (
-  <Provider store={store}>
+  <Provider>
     <BrowserRouter>
       <MainTemplate>
         <Switch>

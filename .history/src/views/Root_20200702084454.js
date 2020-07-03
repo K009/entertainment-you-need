@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import MainTemplate from '../components/templates/MainTemplate';
 import { Provider } from 'react-redux';
-import store from '../store/index';
 import Notes from './Notes';
 import Twitters from './Twitters';
 import Articles from './Articles';
@@ -10,7 +9,7 @@ import DetailsPage from './DetailsPage';
 import { routes } from '../routes/index';
 
 const Root = () => (
-  <Provider store={store}>
+  <Provider>
     <BrowserRouter>
       <MainTemplate>
         <Switch>

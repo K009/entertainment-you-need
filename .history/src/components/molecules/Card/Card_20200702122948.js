@@ -7,7 +7,7 @@ import Heading from '../../atoms/Heading/Heading';
 import Button from '../../atoms/Button/Button';
 import LinkIcon from 'assets/icons/link.svg';
 import { connect } from 'react-redux';
-import { removeItem as removeItemAction } from '../../../actions/index';
+import { removeItem } from '../../../actions/index';
 
 const StyledWrapper = styled.div`
   min-height: 380px;
@@ -99,7 +99,7 @@ class Card extends Component {
         </InnerWrapper>
         <InnerWrapper flex>
           <Paragraph>{content}</Paragraph>
-          <Button onClick={() => removeItem(cardType, id)} secondary>
+          <Button onClick={removeItem{() => removeItem()}} secondary>
             REMOVE
           </Button>
         </InnerWrapper>
@@ -115,7 +115,6 @@ Card.propTypes = {
   twitterName: PropTypes.string,
   articleUrl: PropTypes.string,
   content: PropTypes.string.isRequired,
-  removeItem: PropTypes.func.isRequired,
 };
 
 Card.defaultProps = {
@@ -125,7 +124,7 @@ Card.defaultProps = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  removeItem: (itemType, id) => dispatch(removeItemAction(itemType, id)),
+  removeItem: (itemType, id) => dispatch(removeItem(itemType, id)),
 });
 
 export default connect(null, mapDispatchToProps)(Card);

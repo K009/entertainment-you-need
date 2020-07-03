@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import GridTemplate from '../components/templates/GridTemplate';
 import Card from '../components/molecules/Card/Card';
+import { connect } from '../reducers/index';
 
-const Articles = ({ articles }) => (
+const Articles = () => (
   <GridTemplate pageType="articles">
     {articles.map((item) => (
       <Card
@@ -12,8 +12,7 @@ const Articles = ({ articles }) => (
         content={item.content}
         articleUrl={item.articleUrl}
         created={item.created}
-        id={item.id}
-        key={item.id}
+        key={item.title}
       />
     ))}
   </GridTemplate>
@@ -24,4 +23,4 @@ const mapStateToProps = (state) => {
   return { articles: articles };
 };
 
-export default connect(mapStateToProps)(Articles);
+export default mapStateToProps(Articles);
