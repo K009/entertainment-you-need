@@ -58,7 +58,6 @@ const GridTemplate = ({ children, pageContext }) => (
       </StyledPageHeader>
       <StyledGrid>{children}</StyledGrid>
       <StyledButtonIcon icon={plusIcon} activeColor={pageContext} />
-      <NewItemBar />
     </StyledWrapper>
   </UserPageTemplate>
 );
