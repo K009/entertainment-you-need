@@ -20,15 +20,6 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 85px;
-
-  @media (max-width: 1500px) {
-    grid-gap: 45px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 1100px) {
-    grid-template-columns: 1fr;
-  }
 `;
 
 const StyledPageHeader = styled.div`
@@ -52,27 +43,18 @@ const StyledButtonIcon = styled(ButtonIcon)`
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: ${({ activecolor, theme }) => theme[activecolor]};
+  background-color: ${({ activeColor, theme }) => theme[activeColor]};
   background-size: 35%;
   border-radius: 50px;
-  z-index: 10000;
 `;
 
-class GridTemplate extends Component {
+class GridTemplate extends React.Component {
   state = {
     isNewItemBarVisible: false,
   };
 
-  toggleNewItemBar = () => {
-    this.setState((prevState) => ({
-      isNewItemBarVisible: !prevState.isNewItemBarVisible,
-    }));
-  };
-
   render() {
     const { children, pageContext } = this.props;
-    const { isNewItemBarVisible } = this.state;
-
     return (
       <UserPageTemplate>
         <StyledWrapper>
@@ -81,15 +63,11 @@ class GridTemplate extends Component {
             <StyledHeading big as="h1">
               {pageContext}
             </StyledHeading>
-            <StyledParagraph>6 {pageContext}</StyledParagraph>
+            <StyledParagraph>2 {pageContext}</StyledParagraph>
           </StyledPageHeader>
           <StyledGrid>{children}</StyledGrid>
-          <StyledButtonIcon
-            onClick={this.toggleNewItemBar}
-            icon={plusIcon}
-            activecolor={pageContext}
-          />
-          <NewItemBar handleClose={this.toggleNewItemBar} isVisible={isNewItemBarVisible} />
+          <StyledButtonIcon icon={plusIcon} activeColor={pageContext} />
+          <NewItemBar />
         </StyledWrapper>
       </UserPageTemplate>
     );
@@ -102,7 +80,7 @@ GridTemplate.propTypes = {
 };
 
 GridTemplate.defaultProps = {
-  pageContext: 'notes',
+  pageContext: 'note',
 };
 
 export default withContext(GridTemplate);

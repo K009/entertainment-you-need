@@ -21,8 +21,10 @@ export const addItem = (itemType, itemContent) => {
       itemType,
       item: {
         id: getId(),
-        ...itemContent,
-      },
+        ...itemContent
+      }
+      id: getId(),
+      itemContent,
     },
   };
 };

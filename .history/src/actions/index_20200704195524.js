@@ -23,6 +23,8 @@ export const addItem = (itemType, itemContent) => {
         id: getId(),
         ...itemContent,
       },
+      id: getId(),
+      itemContent,
     },
   };
 };

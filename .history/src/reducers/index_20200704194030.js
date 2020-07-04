@@ -112,7 +112,7 @@ const rootReducer = (state = initialState, action) => {
     case 'ADD_ITEM':
       return {
         ...state,
-        [action.payload.itemType]: [...state[action.payload.itemType], action.payload.item],
+        [action.payload.itemType]: [state[action.payload.itemType], action.payload.itemContent],
       };
     default:
       return state;

@@ -26,11 +26,6 @@ const StyledWrapper = styled.div`
   transition: transform 0.25s ease-in-out;
 `;
 
-const StyledForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-`;
-
 const StyledTextArea = styled(Input)`
   margin: 30px 0 100px;
   border-radius: 20px;
@@ -41,57 +36,31 @@ const StyledInput = styled(Input)`
   margin-top: 30px;
 `;
 
-const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
+const NewItemBar = ({ pageContext, isVisible, addItem }) => (
   <StyledWrapper isVisible={isVisible} activecolor={pageContext}>
     <Heading big>Create new {pageContext}</Heading>
     <Formik
-      initialValues={{ title: '', content: '', articleUrl: '', twitterName: '', created: '' }}
+      initialValue={{ title: '', content: '', articleUrl: '', twitterName: '', created: '' }}
       onSubmit={(values) => {
-        addItem(pageContext, values);
-        handleClose();
+        console.log(values);
+        //addItem(pageContext, values)
       }}
     >
-      {({ values, handleChange, handleBlur }) => (
-        <StyledForm>
+      {({ isSubmitting }) => (
+        <Form>
           <StyledInput
+            as={Field}
             type="text"
             name="title"
-            placeholder="title"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.title}
+            placeholder={pageContext === 'twitters' ? 'Account Name' : 'Title'}
           />
-          {pageContext === 'twitters' && (
-            <StyledInput
-              placeholder="twitter name eg. hello_roman"
-              type="text"
-              name="twitterName"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.twitterName}
-            />
-          )}
           {pageContext === 'articles' && (
-            <StyledInput
-              placeholder="link"
-              type="text"
-              name="articleUrl"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.articleUrl}
-            />
+            <StyledInput placeholder="link" as={Field} type="text" name="articleUrl" />
           )}
-          <StyledTextArea
-            name="content"
-            as="textarea"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.content}
-          />
           <Button type="submit" activecolor={pageContext}>
             Add Note
           </Button>
-        </StyledForm>
+        </Form>
       )}
     </Formik>
   </StyledWrapper>
@@ -99,14 +68,10 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
 
 NewItemBar.propTypes = {
   pageContext: PropTypes.oneOf(['notes', 'twitters', 'articles']),
-  isVisible: PropTypes.bool,
-  addItem: PropTypes.func.isRequired,
-  handleClose: PropTypes.func.isRequired,
 };
 
 NewItemBar.defaultProps = {
   pageContext: 'notes',
-  isVisible: false,
 };
 
 const mapDispatchToProps = (dispatch) => ({

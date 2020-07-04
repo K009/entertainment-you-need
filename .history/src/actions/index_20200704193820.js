@@ -19,10 +19,8 @@ export const addItem = (itemType, itemContent) => {
     type: 'ADD_ITEM',
     payload: {
       itemType,
-      item: {
-        id: getId(),
-        ...itemContent,
-      },
+      id: getId(),
+      itemContent,
     },
   };
 };
