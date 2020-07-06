@@ -1,3 +1,20 @@
+Here is how the app looks like:
+
+  ![Image of project](src/components/img/note_view.png "note_view")
+
+Notes view ^
+
+  ![Image of project](src/components/img/article_detail_view.png "article_detail_view")
+  
+Detail page view ^
+
+  ![Image of project](src/components/img/twitter_add_new.png "twitter_add_new")
+ 
+Here you can add a new twitter item to the store ^ 
+
+This project was created by using React, React Router, Redux, StoryBook, Styled Components and Formik. 
+Thanks to it I learned a lot of React basic's and now I'm ready to create more complex applications.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
