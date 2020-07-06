@@ -93,11 +93,6 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
               Add Twitter
             </Button>
           )}
-          {pageContext === 'articles' && (
-            <Button type="submit" activecolor={pageContext}>
-              Add Article
-            </Button>
-          )}
         </StyledForm>
       )}
     </Formik>
