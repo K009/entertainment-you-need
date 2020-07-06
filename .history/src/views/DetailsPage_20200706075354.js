@@ -4,19 +4,19 @@ import { routes } from '../routes/index';
 
 class DetailsPage extends Component {
   state = {
-    pageType: 'notes',
+    pageType: 'books',
   };
 
   componentDidMount() {
     switch (this.props.match.path) {
-      case routes.twitter:
-        this.setState({ pageType: 'twitters' });
+      case routes.movie:
+        this.setState({ pageType: 'movies' });
         break;
-      case routes.notes:
-        this.setState({ pageType: 'notes' });
+      case routes.book:
+        this.setState({ pageType: 'books' });
         break;
-      case routes.article:
-        this.setState({ pageType: 'articles' });
+      case routes.game:
+        this.setState({ pageType: 'games' });
         break;
     }
   }
@@ -24,11 +24,11 @@ class DetailsPage extends Component {
   render() {
     const dummyArticle = {
       id: 1,
-      title: 'Wake me up at 5 a.m',
+      title: 'Wake me up when Vue ends',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
-      twitterName: 'hello_dominik',
-      articleUrl: 'https://google.com',
+      twitterName: 'hello_roman',
+      articleUrl: 'https://youtube.com/helloroman',
       created: '1 day',
     };
 

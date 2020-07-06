@@ -101,10 +101,10 @@ class Card extends Component {
         <InnerWrapper activeColor={pageContext}>
           <StyledHeading>{title}</StyledHeading>
           <DateInfo>{created}</DateInfo>
-          {pageContext === 'twitters' && (
-            <StyledAvatar src="https://assets.puzzlefactory.pl/puzzle/216/881/original.jpg" />
+          {pageContext === 'movies' && (
+            <StyledAvatar src="https://cdn1.toys4boys.pl/28222-large_default/skladany-robot-tobbie.jpg" />
           )}
-          {pageContext === 'articles' && <StyledLinkButton href={articleUrl} />}
+          {pageContext === 'games' && <StyledLinkButton href={articleUrl} />}
         </InnerWrapper>
         <InnerWrapper flex>
           <Paragraph>{content}</Paragraph>
@@ -118,7 +118,7 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  pageContext: PropTypes.oneOf(['notes', 'twitters', 'articles']),
+  pageContext: PropTypes.oneOf(['books', 'movies', 'games']),
   title: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
   twitterName: PropTypes.string,
@@ -128,7 +128,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  pageContext: 'note',
+  pageContext: 'books',
   twitterName: null,
   articleUrl: null,
 };

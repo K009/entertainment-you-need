@@ -45,7 +45,7 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
   <StyledWrapper isVisible={isVisible} activecolor={pageContext}>
     <Heading big>Create new {pageContext}</Heading>
     <Formik
-      initialValues={{ title: '', content: '', articleUrl: '', twitterName: '', created: '' }}
+      initialValues={{ title: '', content: '', articleUrl: '', movieTitle: '', created: '' }}
       onSubmit={(values) => {
         addItem(pageContext, values);
         handleClose();
@@ -59,11 +59,11 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
             placeholder="title"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.title}
+            value={values.movieTitle}
           />
-          {pageContext === 'twitters' && (
+          {pageContext === 'movies' && (
             <StyledInput
-              placeholder="twitter name eg. hello_roman"
+              placeholder="movie title eg. Titanic"
               type="text"
               name="twitterName"
               onChange={handleChange}
@@ -88,6 +88,7 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
             onBlur={handleBlur}
             value={values.content}
           />
+          {pageContext === ''}
           <Button type="submit" activecolor={pageContext}>
             Add Note
           </Button>

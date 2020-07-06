@@ -102,7 +102,7 @@ class Card extends Component {
           <StyledHeading>{title}</StyledHeading>
           <DateInfo>{created}</DateInfo>
           {pageContext === 'twitters' && (
-            <StyledAvatar src="https://assets.puzzlefactory.pl/puzzle/216/881/original.jpg" />
+            <StyledAvatar src="https://cdn1.toys4boys.pl/28222-large_default/skladany-robot-tobbie.jpg" />
           )}
           {pageContext === 'articles' && <StyledLinkButton href={articleUrl} />}
         </InnerWrapper>

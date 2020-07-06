@@ -88,6 +88,7 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
             onBlur={handleBlur}
             value={values.content}
           />
+          {pageContext === ''}
           <Button type="submit" activecolor={pageContext}>
             Add Note
           </Button>

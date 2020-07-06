@@ -7,7 +7,7 @@ const Articles = ({ articles }) => (
   <GridTemplate pageType="games">
     {articles.map((item) => (
       <Card
-        cardType="articles"
+        cardType="games"
         title={item.title}
         content={item.content}
         articleUrl={item.articleUrl}

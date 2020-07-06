@@ -45,7 +45,7 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
   <StyledWrapper isVisible={isVisible} activecolor={pageContext}>
     <Heading big>Create new {pageContext}</Heading>
     <Formik
-      initialValues={{ title: '', content: '', articleUrl: '', twitterName: '', created: '' }}
+      initialValues={{ title: '', content: '', gameUrl: '', movieTitle: '', created: '' }}
       onSubmit={(values) => {
         addItem(pageContext, values);
         handleClose();
@@ -61,24 +61,24 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
             onBlur={handleBlur}
             value={values.title}
           />
-          {pageContext === 'twitters' && (
+          {pageContext === 'movies' && (
             <StyledInput
-              placeholder="twitter name eg. hello_roman"
+              placeholder="movie title eg. Titanic"
               type="text"
-              name="twitterName"
+              name="movieTitle"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.twitterName}
+              value={values.movieTitle}
             />
           )}
-          {pageContext === 'articles' && (
+          {pageContext === 'games' && (
             <StyledInput
               placeholder="link"
               type="text"
-              name="articleUrl"
+              name="gameUrl"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.articleUrl}
+              value={values.gameUrl}
             />
           )}
           <StyledTextArea
@@ -88,6 +88,7 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
             onBlur={handleBlur}
             value={values.content}
           />
+          {pageContext === ''}
           <Button type="submit" activecolor={pageContext}>
             Add Note
           </Button>
@@ -98,14 +99,14 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
 );
 
 NewItemBar.propTypes = {
-  pageContext: PropTypes.oneOf(['notes', 'twitters', 'articles']),
+  pageContext: PropTypes.oneOf(['books', 'movies', 'games']),
   isVisible: PropTypes.bool,
   addItem: PropTypes.func.isRequired,
   handleClose: PropTypes.func.isRequired,
 };
 
 NewItemBar.defaultProps = {
-  pageContext: 'notes',
+  pageContext: 'books',
   isVisible: false,
 };
 

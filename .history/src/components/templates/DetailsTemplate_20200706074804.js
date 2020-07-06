@@ -61,11 +61,11 @@ const DetailsTemplate = ({ pageContext, title, created, content, articleUrl, twi
         <StyledParagraph>{created}</StyledParagraph>
       </StyledPageHeader>
       <Paragraph>{content}</Paragraph>
-      {pageContext === 'articles' && <StyledLink href={articleUrl}>Open article</StyledLink>}
-      {pageContext === 'twitters' && (
+      {pageContext === 'games' && <StyledLink href={articleUrl}>Open article</StyledLink>}
+      {pageContext === 'movies' && (
         <StyledImage
           alt={title}
-          src="https://assets.puzzlefactory.pl/puzzle/216/881/original.jpg"
+          src="https://cdn1.toys4boys.pl/28222-large_default/skladany-robot-tobbie.jpg"
         />
       )}
       <Button as={Link} to={`/${pageContext}`} activeColor={pageContext}>

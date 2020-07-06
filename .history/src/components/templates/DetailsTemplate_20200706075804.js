@@ -65,7 +65,7 @@ const DetailsTemplate = ({ pageContext, title, created, content, articleUrl, twi
       {pageContext === 'twitters' && (
         <StyledImage
           alt={title}
-          src="https://assets.puzzlefactory.pl/puzzle/216/881/original.jpg"
+          src="https://cdn1.toys4boys.pl/28222-large_default/skladany-robot-tobbie.jpg"
         />
       )}
       <Button as={Link} to={`/${pageContext}`} activeColor={pageContext}>
